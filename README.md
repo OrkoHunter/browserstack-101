@@ -380,4 +380,7 @@ This repository contains two more example workflows using the same demo site - [
 
 # Next Steps
 
-...
+* Checkout BrowserStack [getting started](https://www.browserstack.com/guide) guides
+* Learn more from [Selenium documentation](https://www.selenium.dev/documentation)
+
+Feel free to suggest changes and improvements! ❤️
