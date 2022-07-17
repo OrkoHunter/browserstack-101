@@ -9,9 +9,9 @@
 
 ## Overview
 
-[BrowserStack](https://www.browserstack.com) provides a solution to run your end-to-end tests of your mobile and web apps on multiple real devices and on various browser environments. Essentially, it declutters the desk of a QA engineer - so that they can focus on writing their tests, and not carry around dozens of devices.
+[BrowserStack](https://www.browserstack.com) is a service to run tests for mobile and web apps in cloud. It provides access to several _real_ mobile devices, cross-platform and multiple browser environments. Essentially, it declutters the desk of a QA engineer - so that they can focus on writing their tests, and not carry around dozens of devices.
 
-In this tutorial, we are going to write a few simple automation tests using [Selenium in Node.js](https://www.selenium.dev/selenium/docs/api/javascript/index.html). Then with a few additional lines of code, we'll be able to run them on multiple devices in the BrowserStack environment. We will use the [BrowserStack demo website](https://bstackdemo.com) to write some test workflows e.g. login, add to cart and check offers.
+In this tutorial, we are going to write a simple automation test using [Selenium in Node.js](https://www.selenium.dev/selenium/docs/api/javascript/index.html). Then with some additional lines of code, we'll be able to run it on two mobile devices and three browsers using BrowserStack. We will use the [BrowserStack demo website](https://bstackdemo.com) for the purpose of this tutorial to write some test workflows e.g. login, add to cart and check offers.
 
 ## Pre-requisites
 
@@ -282,7 +282,7 @@ Note: Capabilities are basically settings or options to configure the test.
 
 On the right hand side, you can find the logs and steps in detail, as well as other information like network logs - which are super useful for debugging.
 
-### Step 6: Understanding the changes in code
+### Step 6: Understanding BrowserStack related changes
 
 Congratulations! You have now run a multi-device multi-browser automated test on BrowserStack. Now let's look at the changes in the Selenium code we had to make for it to happen. There are mainly three changes to look at.
 
@@ -307,7 +307,7 @@ Congratulations! You have now run a multi-device multi-browser automated test on
 
 We modified the `runTest` function to accept an argument called `capabilities` here. We will provide options like device name, browser name, etc. using `capabilities`. We have defined a `browserstackServerUrl` using the BrowserStack username and Access Key set in the environment variable. We removed the local browser setting and added a `usingServer` call to use the BrowserStack remote server. We have also added a `withCapabilities` call to include the options we will provide for the test.
 
-#### Change 2: Set test session result on BrowserStack
+#### Change 2: Set the test session result
 
 ```diff
     if (await usernameDisplay.getText() == "demouser") {
@@ -374,7 +374,7 @@ This is to tell BrowserStack that all our tests have passed. Thus triggering som
 
 For each test, we have mofied the type of the device used, its operating system version and the browser used. We are also running all the tests asychronously in parellel. You can find the list of all devices available in the [reference documentation](https://www.browserstack.com/list-of-browsers-and-platforms/automate).
 
-## Step 6: Checkout additional workflows
+## Step 6: Checkout additional workflows (Add to cart and Offers)
 
 This repository contains two more example workflows using the same demo site - [`testAddToCart.js`](testAddToCart.js) and [`testOffers.js`](testOffers.js). You can check them out to seek more inspiration on how to test different aspects of a website. However, the code responsible for BrowserStack integration is exactly the same as [`testLogin.js`](testLogin.js).
 
