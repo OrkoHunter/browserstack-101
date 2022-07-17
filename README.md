@@ -376,7 +376,7 @@ For each test, we have mofied the type of the device used, its operating system 
 
 ## Step 6: Checkout additional workflows (Add to cart and Offers)
 
-This repository contains two more example workflows using the same demo site - [`testAddToCart.js`](testAddToCart.js) and [`testOffers.js`](testOffers.js). You can check them out to seek more inspiration on how to test different aspects of a website. However, the code responsible for BrowserStack integration is exactly the same as [`testLogin.js`](testLogin.js).
+This repository contains two more example workflows using the same demo site - [`testAddToCart.js`](src/testAddToCart.js) and [`testOffers.js`](src/testOffers.js). You can check them out to seek more inspiration on how to test different aspects of a website. However, the code responsible for BrowserStack integration is exactly the same as [`testLogin.js`](src/testLogin.js).
 
 # Next Steps
 
